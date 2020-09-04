@@ -1,0 +1,23 @@
+{
+  "name": "sc-helloworld",
+  "version": "1.0.0",
+  "description": "Hello World app for service core",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon --watch api --watch runner.mjs --watch index.mjs runner.mjs",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TheThing/sc-helloworld.git"
+  },
+  "author": "",
+  "license": "WTFPL",
+  "bugs": {
+    "url": "https://github.com/TheThing/sc-helloworld/issues"
+  },
+  "homepage": "https://github.com/TheThing/sc-helloworld#readme",
+  "devDependencies": {
+    "nodemon": "^2.0.4"
+  }
+}
