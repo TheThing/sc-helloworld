@@ -17,12 +17,12 @@ jobs:
             zip "${CIRCLE_PROJECT_REPONAME}_build-sc.zip" index.mjs package.json api/**
             echo "Creating release '${PACKAGE_VERSION}.${CIRCLE_BUILD_NUM}'"
             github-release upload \
-              --commitish $CIRCLE_SHA1
-              --token $GITHUB_TOKEN
-              --owner $CIRCLE_PROJECT_USERNAME
-              --repo $CIRCLE_PROJECT_REPONAME
-              --tag "v${PACKAGE_VERSION}.${CIRCLE_BUILD_NUM}"
-              --name "v${PACKAGE_VERSION}.${CIRCLE_BUILD_NUM}"
+              --commitish $CIRCLE_SHA1 \
+              --token $GITHUB_TOKEN \
+              --owner $CIRCLE_PROJECT_USERNAME \
+              --repo $CIRCLE_PROJECT_REPONAME \
+              --tag "v${PACKAGE_VERSION}.${CIRCLE_BUILD_NUM}" \
+              --name "v${PACKAGE_VERSION}.${CIRCLE_BUILD_NUM}" \
               --body "Automatic CircleCI Build of v${PACKAGE_VERSION}.${CIRCLE_BUILD_NUM} from ${CIRCLE_SHA1}" \
               sc-helloworld_build-sc.zip
 
