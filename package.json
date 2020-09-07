@@ -17,6 +17,9 @@
     "url": "https://github.com/TheThing/sc-helloworld/issues"
   },
   "homepage": "https://github.com/TheThing/sc-helloworld#readme",
+  "dependencies": {
+    "node-static": "^0.7.11"
+  },
   "devDependencies": {
     "nodemon": "^2.0.4"
   }
