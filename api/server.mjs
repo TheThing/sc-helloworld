@@ -2,7 +2,7 @@ import path from 'path'
 import { readFileSync } from 'fs'
 import { fileURLToPath } from 'url'
 
-export function run(config, db, log, core, http) {
+export function run(config, db, log, core, http, orgPort) {
   const __dirname = path.dirname(fileURLToPath(import.meta.url))
   const staticPackage = path.join(__dirname,'../package.json')
   let packageInfo = JSON.parse(readFileSync(staticPackage))
@@ -13,7 +13,7 @@ export function run(config, db, log, core, http) {
     res.end()
   })
 
-  let port = config.port || 4000
+  let port = orgPort || 4000
 
   server.listen(port, '0.0.0.0', function(err) {
     if (err) {
