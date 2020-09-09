@@ -1,10 +1,10 @@
 {
   "name": "sc-helloworld",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Hello World app for service core",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon --watch api --watch runner.mjs --watch index.mjs runner.mjs",
+    "dev": "nodemon --watch api --watch runner.mjs --watch index.mjs runner.mjs | bunyan",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -21,6 +21,7 @@
     "node-static": "^0.7.11"
   },
   "devDependencies": {
+    "bunyan-lite": "^1.0.1",
     "nodemon": "^2.0.4"
   }
 }

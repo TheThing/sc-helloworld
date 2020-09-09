@@ -1,0 +1,9 @@
+{
+  "name": "service-core-helloworld",
+  "serviceName": "Service-Core HelloWorld App",
+  "description": "Simple Hello world app for service core",
+  "port": 4270,
+  "managePort": 4269,
+  "appRepository": null,
+  "manageRepository": null
+}

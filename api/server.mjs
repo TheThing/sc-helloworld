@@ -1,20 +1,19 @@
-import http from 'http'
 import path from 'path'
 import { readFileSync } from 'fs'
 import { fileURLToPath } from 'url'
 
-export function run(config, db, log, core) {
+export function run(config, db, log, core, http) {
   const __dirname = path.dirname(fileURLToPath(import.meta.url))
   const staticPackage = path.join(__dirname,'../package.json')
-  config = JSON.parse(readFileSync(staticPackage))
+  let packageInfo = JSON.parse(readFileSync(staticPackage))
 
   const server = http.createServer(function (req, res) {
     res.writeHead(200);
-    res.write(JSON.stringify(config, null, '  '))
+    res.write(JSON.stringify(packageInfo, null, '  '))
     res.end()
   })
 
-  let port = config.managePort || 4000
+  let port = config.port || 4000
 
   server.listen(port, '0.0.0.0', function(err) {
     if (err) {
